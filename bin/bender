@@ -9,7 +9,7 @@ var fs = require( 'fs' ),
 		// old Bender executable path (version 0.1.x)
 		path.join( process.cwd(), 'node_modules', 'benderjs', 'bin', 'bender' ),
 		// new Bender executable path (version 0.2.x)
-		path.join( process.cwd(), 'node_modules', 'benderjs', 'lib', 'main.js' )
+		path.join( process.cwd(), 'node_modules', 'benderjs', 'lib', 'cli.js' )
 	];
 
 // show CLI version information
