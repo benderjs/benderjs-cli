@@ -1,0 +1,27 @@
+{
+	"name": "benderjs-cli",
+	"version": "0.1.0",
+	"description": "The command line interface for Bender.js",
+	"bin": {
+		"bender": "./bin/bender"
+	},
+	"scripts": {
+		"lint": "jscs . && jshint bin/"
+	},
+	"keywords": [
+		"bender",
+		"cli",
+		"command",
+		"line",
+		"interface"
+	],
+	"author": "CKSource <npm@cksource.com> (http://cksource.com/)",
+	"license": "MIT",
+	"dependencies": {
+		"resolve": "^1.0.0"
+	},
+	"devDependencies": {
+		"jscs": "^1.8.1",
+		"jshint": "^2.5.10"
+	}
+}

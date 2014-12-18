@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var fs = require( 'fs' ),
+	path = require( 'path' ),
+	pkg = require( '../package.json' ),
+	paths = [
+		// old Bender executable path (version 0.1.x)
+		path.join( process.cwd(), 'node_modules', 'benderjs', 'bin', 'bender' ),
+		// new Bender executable path (version 0.2.x)
+		path.join( process.cwd(), 'node_modules', 'benderjs', 'lib', 'main.js' )
+	];
+
+// show CLI version information
+if ( process.argv[ 2 ] == 'version' ) {
+	console.log( 'Bender.js CLI v' + pkg.version );
+}
+
+function runBender( localBenderPath ) {
+	fs.exists( localBenderPath, function( exists ) {
+		if ( !exists ) {
+			// try another paths
+			if ( paths.length ) {
+				return runBender( paths.pop() );
+			}
+
+			// display error message
+			if ( process.argv[ 2 ] !== 'version' ) {
+				console.error( 'Local Bender.js installation not found.' );
+			}
+
+			return;
+		}
+
+		// start running Bender.js core
+		require( localBenderPath );
+	} );
+}
+
+runBender( paths.pop() );
