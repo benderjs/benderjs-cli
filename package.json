@@ -17,8 +17,12 @@
 	],
 	"author": "CKSource <npm@cksource.com> (http://cksource.com/)",
 	"license": "MIT",
-	"dependencies": {
-		"resolve": "^1.0.0"
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/benderjs/benderjs-cli.git"
+	},
+	"bugs": {
+		"url": "https://github.com/benderjs/benderjs-cli/issues"
 	},
 	"devDependencies": {
 		"jscs": "^1.8.1",
