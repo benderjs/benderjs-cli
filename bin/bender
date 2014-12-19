@@ -34,7 +34,12 @@ function runBender( localBenderPath ) {
 		}
 
 		// start running Bender.js core
-		require( localBenderPath );
+		var cli = require( localBenderPath );
+
+		// execute an argument parser in Bender 0.2.x
+		if ( cli.run ) {
+			cli.run();
+		}
 	} );
 }
 
