@@ -6,6 +6,8 @@ The command line interface for [Bender.js](https://github.com/benderjs/benderjs)
 
 benderjs-cli is compatible with Bender.js in versions 0.1.x and 0.2.x.
 
+**Warning**: this module is not compatible with global installations of Bender 0.1.x
+
 ## Installation
 
 For your convenience, please install benderjs-cli globally.
