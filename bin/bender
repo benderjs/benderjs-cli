@@ -6,10 +6,10 @@ var fs = require( 'fs' ),
 	path = require( 'path' ),
 	pkg = require( '../package.json' ),
 	paths = [
-		// old Bender executable path (version 0.1.x)
-		path.join( process.cwd(), 'node_modules', 'benderjs', 'bin', 'bender' ),
 		// new Bender executable path (version 0.2.x)
-		path.join( process.cwd(), 'node_modules', 'benderjs', 'lib', 'cli.js' )
+		path.join( process.cwd(), 'node_modules', 'benderjs', 'lib', 'cli.js' ),
+		// old Bender executable path (version 0.1.x)
+		path.join( process.cwd(), 'node_modules', 'benderjs', 'bin', 'bender' )
 	];
 
 // show CLI version information
