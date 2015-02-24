@@ -10,10 +10,12 @@ var fs = require( 'fs' ),
 		path.join( process.cwd(), 'node_modules', 'benderjs', 'lib', 'cli.js' ),
 		// old Bender executable path (version 0.1.x)
 		path.join( process.cwd(), 'node_modules', 'benderjs', 'bin', 'bender' )
-	];
+	],
+	versionArgs = [ 'version', '-v', '--version' ],
+	arg = process.argv[ 2 ];
 
 // show CLI version information
-if ( process.argv[ 2 ] == 'version' ) {
+if ( versionArgs.indexOf( arg ) > -1 ) {
 	console.log( 'Bender.js CLI v' + pkg.version );
 }
 
@@ -26,7 +28,7 @@ function runBender( localBenderPath ) {
 			}
 
 			// display error message
-			if ( process.argv[ 2 ] !== 'version' ) {
+			if ( versionArgs.indexOf( arg ) === -1 ) {
 				console.error( 'Local Bender.js installation not found.' );
 			}
 
